@@ -38,5 +38,29 @@ public class Trie
 
         // to determine if we've reached the end of the word
         return cur.isWord();
-    }    
+    }
+
+    //inserts the word one letter at a time into the trie
+    //returns true if word is inserted
+    public boolean insert(String word) {
+    	//only insert lowercase letters
+    	String lower = word.toLowerCase();
+    	TrieNode cur = root;
+    	//if word already in trie, don't insert
+    	if (search(lower)) {
+    		return false;
+    	}
+    	for (int i = 0; i < lower.length(); i++) {
+            int index = lower.charAt(i) - 'a';
+            
+            if (cur.children()[index] == null) {
+                // add the letter as a child of the current node
+                cur.children()[index] = new TrieNode(lower.charAt(i));
+            } 
+            cur = cur.children()[index];
+            
+    	}
+    	cur.setIsWord(true); // mark end of word
+    	return true;
+    }
 }
