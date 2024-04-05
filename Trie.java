@@ -63,4 +63,50 @@ public class Trie
     	cur.setIsWord(true); // mark end of word
     	return true;
     }
+    public TrieNode remove(String word) {   
+		return removeHelp(root, word.toLowerCase(), 0); // Start deletion from the root with depth 0
+	}
+
+	private TrieNode removeHelp(TrieNode root, String key, int depth) {
+	    if (root == null) {
+	        return null;
+	    }
+	    
+	    // if it's the last character of the word
+	    if (depth == key.length()) {
+	        // set the word to false
+	        if (root.isWord()) {
+	            root.setIsWord(false);
+	        }
+
+	        // If given is not prefix of any other word, remove it
+	        if (isEmpty(root)) {
+	            return null; // Return null to indicate removal
+	        }
+
+	        return root; // Return the current node (not removed)
+	    }
+
+	    // if not last character, recur for the child
+	    int index = key.charAt(depth) - 'a';
+	    
+	    root.children()[index] = removeHelp(root.children()[index], key, depth + 1);
+
+	    // Only remove the current node if it's empty AND it's not the end of another word
+	    if (isEmpty(root) && !root.isWord()) {
+	        return null; // Return null to indicate removal
+	    }
+
+	    return root; // Return the current node
+	}
+
+	// checks if a TrieNode is empty (has no children)
+	private static boolean isEmpty(TrieNode node) {
+		for (TrieNode child : node.children()) {
+			if (child != null) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
