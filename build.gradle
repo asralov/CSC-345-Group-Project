@@ -23,10 +23,19 @@ test {
     }
 }
 
-application {
-    mainClass = 'src.main.java.Main'
-}
+// application {
+//     mainClass = 'src.main.java.Main'
+// }
 
 run{
  standardInput = System.in
 }
+
+// sourceSets {
+//     main {
+//         java.srcDirs = ['src/main/java']
+//     }
+//     test {
+//         java.srcDirs = ['src/test/java']
+//     }
+// }
