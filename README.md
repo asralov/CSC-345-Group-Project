@@ -55,15 +55,15 @@ gradlew.bat clean test
 
 User is able to see the test results as shown below:
 ```shell
-TestJunit > Aho-Corasick Failure and Output Link Test PASSED
+AhoCorasickTrieTest > Aho-Corasick Failure and Output Link Test PASSED
 
-TestJunit > Aho-Corasick Failure Link Test 1 PASSED
+AhoCorasickTrieTest > Aho-Corasick Failure Link Test 1 PASSED
 
-TestJunit > Aho-Corasick Failure Link Test 2 PASSED
+AhoCorasickTrieTest > Aho-Corasick Failure Link Test 2 PASSED
 
-TestJunit > Aho-Corasick Output Link Test 1 PASSED
+AhoCorasickTrieTest > Aho-Corasick Output Link Test 1 PASSED
 
-TestJunit > Aho-Corasick Output Link Test 2 PASSED
+AhoCorasickTrieTest > Aho-Corasick Output Link Test 2 PASSED
 ```
 
 
