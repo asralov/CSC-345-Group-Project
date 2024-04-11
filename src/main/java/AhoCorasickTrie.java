@@ -1,9 +1,8 @@
+package src.main.java;
 /*
 Authors : Jin Kim
 */
 
-
-// constant string divider
 public class AhoCorasickTrie {
     Trie trie;
 
@@ -13,13 +12,9 @@ public class AhoCorasickTrie {
     }
 
     public void build(String[] patterns) {
-        System.out.print("Pattern(s): ");
         for (String pattern : patterns) {
             trie.insert(pattern);
-            System.out.print("\"" + pattern + "\" ");
         }
-        System.out.println();
-        // System.out.println();
 
         buildlLinks();
     }
@@ -71,8 +66,6 @@ public class AhoCorasickTrie {
     public void search(String text) {
         TrieNode cur = trie.root();
 
-        System.out.println("String: \"" + text + "\"\n");
-
         for (int i = 0; i < text.length(); i++) {
             int index = text.charAt(i) - 'a';
 
@@ -94,6 +87,10 @@ public class AhoCorasickTrie {
                 }
             }
         }
+    }
+
+    public TrieNode getRoot() {
+        return trie.root();
     }
 
     // public static void main(String[] args) {

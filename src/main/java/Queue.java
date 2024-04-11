@@ -1,3 +1,5 @@
+package src.main.java;
+
 /*
  * Implements array based TrieNode queue with resizing
  * 

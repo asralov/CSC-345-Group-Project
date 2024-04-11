@@ -1,6 +1,5 @@
-/**
- * This is a TrieNode class
- */
+package src.main.java;
+
 public class TrieNode 
 {
     // private attributes
