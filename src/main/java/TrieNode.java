@@ -69,5 +69,17 @@ public class TrieNode
     {
         return this.children;
     }
+
+    // added a toString for debugging and printing purposes
+    public String toString() {
+        if (numOfChildren == 0) {
+            return ""; // No children to print
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < numOfChildren; i++) {
+            sb.append(children[i].letter()); // Append child's letter
+        }
+        return sb.toString();
+    }
     
 }
