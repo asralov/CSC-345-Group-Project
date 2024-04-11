@@ -23,9 +23,9 @@ test {
     }
 }
 
-// application {
-//     mainClass = 'src.main.java.Main'
-// }
+application {
+    mainClass = 'src.main.java.Main'
+}
 
 run{
  standardInput = System.in
