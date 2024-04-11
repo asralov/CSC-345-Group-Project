@@ -11,7 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 public class AhoCorasickTrieTest {
 
     @Test
-    @DisplayName("Aho-Corasick Failure Link Test 1")
+    @DisplayName("Failure Link Test 1")
     public void testFailureLinks1() {
         String[] patterns = {"acc", "atc", "cat", "gcg"};
         AhoCorasickTrie ac = new AhoCorasickTrie();
@@ -59,7 +59,7 @@ public class AhoCorasickTrieTest {
     }
 
     @Test
-    @DisplayName("Aho-Corasick Failure Link Test 2")
+    @DisplayName("Failure Link Test 2")
     public void testFailureLinks2() {
         String[] patterns = {"abc", "bcd", "cde", "def", "efg"};
         AhoCorasickTrie ac = new AhoCorasickTrie();
@@ -110,7 +110,7 @@ public class AhoCorasickTrieTest {
     }
 
     @Test
-    @DisplayName("Aho-Corasick Output Link Test 1")
+    @DisplayName("Output Link Test 1")
     public void testOutputLinks1() {
         String[] patterns = {"he", "she", "his", "hers", "her"};
         AhoCorasickTrie ac = new AhoCorasickTrie();
@@ -141,7 +141,7 @@ public class AhoCorasickTrieTest {
     }
 
     @Test
-    @DisplayName("Aho-Corasick Output Link Test 2")
+    @DisplayName("Output Link Test 2")
     public void testOutputLinks2() {
         String[] patterns = {"a", "ab", "abc", "abcd", "abcde"};
         AhoCorasickTrie ac = new AhoCorasickTrie();
@@ -168,7 +168,7 @@ public class AhoCorasickTrieTest {
     }
 
     @Test
-    @DisplayName("Aho-Corasick Failure and Output Link Test")
+    @DisplayName("Failure and Output Link Test")
     public void testFailureAndOutputLinks() {
         String[] patterns = {"e", "de", "cde", "bcde", "abcde"};
         AhoCorasickTrie ac = new AhoCorasickTrie();

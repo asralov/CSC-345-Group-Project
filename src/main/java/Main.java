@@ -2,7 +2,7 @@ package src.main.java;
 import java.util.Scanner;
 
 /*
- * Authors: 
+ * Authors: Abrorjon Asralov, Jin Kim, Pulat Uralov,
  */
 
 public class Main {

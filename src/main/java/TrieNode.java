@@ -1,5 +1,9 @@
 package src.main.java;
 
+/*
+ * Authors : Abrorjon Asralov, Jin Kim
+ */
+
 public class TrieNode 
 {
     // private attributes

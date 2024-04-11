@@ -81,4 +81,8 @@ public class Queue {
         front = 0;
         back = size;
     }
+
+    public Integer getCapacity() {
+        return capacity;
+    }
 }
