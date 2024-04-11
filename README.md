@@ -8,7 +8,7 @@ Tools: ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visual-stu
 
 
 ## Simulation
-To simulate the project, you can run the following command in the terminal.
+To simulate the project, run the following command in the terminal in the root directory.
 
 In macOS or Linux:
 ```shell
@@ -19,6 +19,15 @@ In Windows:
 
 ```shell
 gradlew.bat run
+```
+
+To compile and run manually, run this command instead:
+```shell
+javac src/main/java/*.java
+```
+and then run:
+```shell
+java src/main/java/Main.java
 ```
 
 <br />
@@ -38,7 +47,7 @@ Enter your choice:
 
 
 ## Testing
-To run the tests, you can run the following command in the terminal.
+To run the tests, run the following command in the terminal in the root directory.
 
 In macOS or Linux:
 ```shell
