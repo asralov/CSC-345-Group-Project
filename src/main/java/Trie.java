@@ -1,4 +1,8 @@
+package src.main.java;
 
+/*
+ * Authors : Abrorjon Asralov, Alex Scherer, Jin Kim, Pulat Uralov
+ */
 
 public class Trie 
 {
@@ -61,6 +65,9 @@ public class Trie
             
     	}
     	cur.setIsWord(true); // mark end of word
+
+		// extra attributes for AhoCorasick
+		cur.pattern = lower; // store the word in the node
     	return true;
     }
     public TrieNode remove(String word) {   
@@ -108,5 +115,9 @@ public class Trie
 			}
 		}
 		return true;
+	}
+
+	public TrieNode root() {
+		return root;
 	}
 }

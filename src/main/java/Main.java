@@ -1,7 +1,49 @@
+package src.main.java;
+import java.util.Scanner;
+
+/*
+ * Authors: Abrorjon Asralov, Jin Kim, Pulat Uralov,
+ */
 
 public class Main {
+	public static String DIVIDER = "-------------------------------";
 
 	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		int choice;
+
+		System.out.println(DIVIDER);
+		System.out.println("Group 23 Final Project");
+		System.out.println(DIVIDER);
+
+		do {
+			System.out.println("Simulation options:");
+			System.out.println("1. Trie");
+			System.out.println("2. Aho-Corasick algorithm");
+			System.out.println("3. Autofill");
+
+			System.out.print("\nEnter your choice: ");
+			choice = keyboard.nextInt();
+			
+			System.out.println();
+		} while (choice != 1 && choice != 2 && choice != 3);
+
+		switch (choice) {
+			case 1:
+				testTrie();
+				break;
+			case 2:
+				ACSimulation.run();
+				break;
+			case 3:
+				testAutofill();
+				break;
+		}
+
+		keyboard.close();
+	}
+
+	private static void testTrie() {
 	    Trie trie = new Trie();
 
 	    // Test insertion
@@ -47,5 +89,8 @@ public class Main {
 	    System.out.println("dogs: " + trie.search("dogs"));        // true
 	}
 
+	private static void testAutofill() {
+		System.out.println("to be implemented...");
+	}
 }
 

@@ -1,6 +1,9 @@
-/**
- * This is a TrieNode class
+package src.main.java;
+
+/*
+ * Authors : Abrorjon Asralov, Jin Kim
  */
+
 public class TrieNode 
 {
     // private attributes
@@ -9,17 +12,28 @@ public class TrieNode
     private int numOfChildren = 0; // for keeping the count for indexing array
     private boolean isWord = false; // for checking if we've reached the end of the word
 
+    // extra atrributes for AhoCorasick
+    public TrieNode fail;  // simulates failure link
+    public TrieNode out;   // simulates output link
+    public String pattern; // pattern that node represents
+
     // Constructor
     public TrieNode(char character)
     {
         this.letter = character;
         this.children = new TrieNode[26]; // 26 possible combos with letters
+
+        this.fail = null;
+        this.out = null;
     }
 
     // Constructor for root
     public TrieNode()
     {
         this.children = new TrieNode[26]; // 26 possible combos with letters
+
+        this.fail = null;
+        this.out = null;
     }
 
     /**
@@ -58,6 +72,18 @@ public class TrieNode
     public TrieNode[] children()
     {
         return this.children;
+    }
+
+    // added a toString for debugging and printing purposes
+    public String toString() {
+        if (numOfChildren == 0) {
+            return ""; // No children to print
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < numOfChildren; i++) {
+            sb.append(children[i].letter()); // Append child's letter
+        }
+        return sb.toString();
     }
     
 }
