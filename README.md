@@ -23,11 +23,7 @@ gradlew.bat run
 
 To compile and run manually, run this command instead:
 ```shell
-javac src/main/java/*.java
-```
-and then run:
-```shell
-java src/main/java/Main.java
+javac src/main/java/*.java && java src/main/java/Main.java
 ```
 
 <br />
