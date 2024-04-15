@@ -4,6 +4,7 @@ import src.main.java.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.DisplayName;
 
 /*
  * Authors : Abrorjon Asralov
@@ -21,6 +22,7 @@ public class TrieNodeTest
     // }
 
     @Test
+    @DisplayName("Test 1")
     public void test1()
     {
         TrieNode trie = new TrieNode();
@@ -41,6 +43,7 @@ public class TrieNodeTest
     }
 
     @Test
+    @DisplayName("Test 2")
     public void test2() 
     {
         // root
@@ -59,6 +62,7 @@ public class TrieNodeTest
     }
 
     @Test
+    @DisplayName("Test 3")
     public void test3()
     {
         // root

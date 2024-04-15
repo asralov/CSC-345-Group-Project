@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.DisplayName;
 import src.main.java.*;
+
 
 /*
  * Authors : Abrorjon Asralov
@@ -14,6 +16,7 @@ import src.main.java.*;
 public class TrieTest {
 
     @Test
+    @DisplayName("Insert and Search Test")
     public void testInsertAndSearch() {
         Trie trie = new Trie();
         assertTrue(trie.insert("apple"));
@@ -24,6 +27,7 @@ public class TrieTest {
     }
 
     @Test
+    @DisplayName("Insert Duplicate Word Test")
     public void testInsertDuplicateWord() {
         Trie trie = new Trie();
         assertTrue(trie.insert("apple"));
@@ -33,6 +37,7 @@ public class TrieTest {
     }
 
     @Test
+    @DisplayName("Case Insensitive Search Test")
     public void testCaseInsensitiveSearch() {
         Trie trie = new Trie();
         trie.insert("apple");
@@ -43,6 +48,7 @@ public class TrieTest {
     }
 
     @Test
+    @DisplayName("Remove Word Test")
     public void testRemoveWord() {
         Trie trie = new Trie();
         trie.insert("apple");
@@ -55,6 +61,7 @@ public class TrieTest {
     }
 
     @Test
+    @DisplayName("Remove Nonexistent Word Test")
     public void testRemoveNonexistentWord() {
         Trie trie = new Trie();
         assertNull(trie.remove("apple")); // Should return null for non-existent word
@@ -63,6 +70,7 @@ public class TrieTest {
     }
 
     @Test
+    @DisplayName("Remove Word with Prefix Test")
     public void testRemoveWordWithPrefix() {
         Trie trie = new Trie();
         trie.insert("apple");
@@ -75,6 +83,7 @@ public class TrieTest {
     }
     
     @Test
+    @DisplayName("Autofill Test")
     public void testAutofill() {
     	Trie trie = new Trie();
         trie.insert("apple");
