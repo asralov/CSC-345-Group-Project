@@ -1,4 +1,5 @@
 package src.main.java;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -90,7 +91,26 @@ public class Main {
 	}
 
 	private static void testAutofill() {
-		System.out.println("to be implemented...");
+		System.out.println("Adding words: apple, app, apps, banana, ball, cat");
+		Trie trie = new Trie();
+        // Insert words into the trie
+        trie.insert("apple");
+        trie.insert("app");
+        trie.insert("apps");
+        trie.insert("banana");
+        trie.insert("ball");
+        trie.insert("cat");
+
+        String[] suggestions = trie.autofill("ap", null,null);
+        System.out.println("Autofill suggestions for 'ap': " + Arrays.toString(suggestions));
+        suggestions = trie.autofill("ba", null,null);
+        System.out.println("Autofill suggestions for 'ba': " + Arrays.toString(suggestions));
+        suggestions = trie.autofill("ban", null,null);
+        System.out.println("Autofill suggestions for 'ban': " + Arrays.toString(suggestions));
+        suggestions = trie.autofill("app", null,null);
+        System.out.println("Autofill suggestions for 'app': " + Arrays.toString(suggestions));
+        suggestions = trie.autofill("y", null,null);
+        System.out.println("Autofill suggestions for 'y': " + Arrays.toString(suggestions));
 	}
 }
 

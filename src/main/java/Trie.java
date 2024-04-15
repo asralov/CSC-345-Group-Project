@@ -1,5 +1,8 @@
 package src.main.java;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /*
  * Authors : Abrorjon Asralov, Alex Scherer, Jin Kim, Pulat Uralov
  */
@@ -119,5 +122,50 @@ public class Trie
 
 	public TrieNode root() {
 		return root;
+	}
+	
+	/*This method takes a string input and searches for strings in the Trie that are
+	 *3 letters or less away from the given string (only strings bigger than the given)
+	 *
+	 *suggestions and curString are arguments that help recurse the function to check children nodes 
+	 *Returns Null if given string has no suggestions in the Trie
+	 *AutoFill does NOT contain the given string as you are looking for other words*/
+	public String[] autofill(String string, ArrayList<String> suggestions, String curString) {
+		suggestions = new ArrayList<>();
+
+		TrieNode cur = root;
+        String wordLower = string.toLowerCase();
+        if (curString == null) {
+			curString = wordLower;
+		}
+
+        // First use the search algo to locate the node for the final char
+        // in the string to begin searching (null if not in Trie)
+        for (int i = 0; i < curString.length(); i++) {
+            int index = curString.charAt(i) - 'a';
+            
+            if (cur.children()[index] == null) {
+                // character not found
+                return null;
+            } else {
+                cur = cur.children()[index];
+            }
+        }
+
+        // Then loop through the node's children and find ones within 3 chars that are words
+        for(TrieNode child : cur.children()) {
+        	if (child != null) {
+        		if (child.isWord()) {
+            		suggestions.add(curString + child.letter());
+            	}
+        		if (curString.length() < string.length() + 2 ) {
+        			// recurse to repeat the process for the children nodes
+        			suggestions.addAll(Arrays.asList(autofill(wordLower, suggestions, curString+child.letter())));
+        		}
+        		
+        	}
+        }
+		return suggestions.toArray(new String[suggestions.size()]); // turn array list to a normal array
+		
 	}
 }
