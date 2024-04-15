@@ -80,7 +80,7 @@ public class TrieTest {
         trie.insert("apple");
         trie.insert("app");
         String[] test = {"app", "apple"};
-        String[] autofill = trie.autofill("ap", null, null);
+        String[] autofill = trie.autofill("ap", null, null,0);
         for(int i = 0; i<test.length; i++) {
         	assertEquals(test[i], autofill[i]);
         } 

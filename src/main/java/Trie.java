@@ -1,7 +1,6 @@
 package src.main.java;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 /*
  * Authors : Abrorjon Asralov, Alex Scherer, Jin Kim, Pulat Uralov
@@ -127,12 +126,13 @@ public class Trie
 	/*This method takes a string input and searches for strings in the Trie that are
 	 *3 letters or less away from the given string (only strings bigger than the given)
 	 *
-	 *suggestions and curString are arguments that help recurse the function to check children nodes 
+	 *suggestions and curString are arguments that help recurse the function to check children nodes
+	 *currIndex is required to add the new word into the array at the proper spot 
 	 *Returns Null if given string has no suggestions in the Trie
 	 *AutoFill does NOT contain the given string as you are looking for other words*/
-	public String[] autofill(String string, ArrayList<String> suggestions, String curString) {
-		suggestions = new ArrayList<>();
-
+	public String[] autofill(String string, String[] suggestions, String curString, int currIndex) {
+		suggestions = new String[20];
+		
 		TrieNode cur = root;
         String wordLower = string.toLowerCase();
         if (curString == null) {
@@ -151,21 +151,45 @@ public class Trie
                 cur = cur.children()[index];
             }
         }
-
+        
         // Then loop through the node's children and find ones within 3 chars that are words
         for(TrieNode child : cur.children()) {
         	if (child != null) {
         		if (child.isWord()) {
-            		suggestions.add(curString + child.letter());
+            		suggestions[currIndex]=(curString + child.letter());
+            		currIndex++;
             	}
         		if (curString.length() < string.length() + 2 ) {
         			// recurse to repeat the process for the children nodes
-        			suggestions.addAll(Arrays.asList(autofill(wordLower, suggestions, curString+child.letter())));
+        			String[] moreSuggestions = autofill(wordLower, suggestions, curString+child.letter(),currIndex);
+        			// add the recursed words into the current array
+        			for( String word : moreSuggestions) {
+        				if(word != null) {
+        					suggestions[currIndex] = word;
+        					currIndex++;
+        				}
+        			}
         		}
-        		
         	}
         }
-		return suggestions.toArray(new String[suggestions.size()]); // turn array list to a normal array
-		
+		return suggestions;
+	}
+	
+	//helper function that is used when printing the autofill suggestions as a string instead of as a String[]
+	public String suggestionsToString(String[] suggestions) {
+		String retval = "";
+		if (suggestions == null) {
+			return null;
+		}
+		for (int i = 0; i < suggestions.length; i++) {
+			if(suggestions[i] !=null) {
+				retval += suggestions[i];
+				if(suggestions[i+1] != null) {
+					retval+=", ";
+				}
+			}
+			
+		}
+		return retval;
 	}
 }

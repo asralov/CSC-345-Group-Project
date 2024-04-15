@@ -1,5 +1,5 @@
 package src.main.java;
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 /*
@@ -100,17 +100,12 @@ public class Main {
         trie.insert("banana");
         trie.insert("ball");
         trie.insert("cat");
-
-        String[] suggestions = trie.autofill("ap", null,null);
-        System.out.println("Autofill suggestions for 'ap': " + Arrays.toString(suggestions));
-        suggestions = trie.autofill("ba", null,null);
-        System.out.println("Autofill suggestions for 'ba': " + Arrays.toString(suggestions));
-        suggestions = trie.autofill("ban", null,null);
-        System.out.println("Autofill suggestions for 'ban': " + Arrays.toString(suggestions));
-        suggestions = trie.autofill("app", null,null);
-        System.out.println("Autofill suggestions for 'app': " + Arrays.toString(suggestions));
-        suggestions = trie.autofill("y", null,null);
-        System.out.println("Autofill suggestions for 'y': " + Arrays.toString(suggestions));
+        // use suggestionsToString on autofill to print as a string
+        System.out.println("Autofill suggestions for 'ap': " + trie.suggestionsToString(trie.autofill("ap", null,null,0))); 
+        System.out.println("Autofill suggestions for 'ba': " + trie.suggestionsToString(trie.autofill("ba", null,null,0)));
+        System.out.println("Autofill suggestions for 'ban': " + trie.suggestionsToString(trie.autofill("ban", null,null,0)));
+        System.out.println("Autofill suggestions for 'app': " + trie.suggestionsToString(trie.autofill("app", null,null,0)));
+        System.out.println("Autofill suggestions for 'y': " + trie.suggestionsToString(trie.autofill("y", null,null,0)));
 	}
 }
 
