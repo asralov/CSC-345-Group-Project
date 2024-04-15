@@ -4,15 +4,25 @@ package src.main.java;
  */
 public class WildCardSearch 
 {
+    // Trie we want to have a searching on
     private Trie trie;
 
-    public WildCardSearch(Trie trie) {
+    /**
+     * This is a constructor for our WildCardSearch class. As a 
+     * parameter we pass already created trie with words. Then
+     * we can actually start searching.
+     * 
+     * @param trie
+     */
+    public WildCardSearch(Trie trie) 
+    {
         this.trie = trie;
     }
 
     /**
      * This is a method that returns a boolean that shows whether we are
      * able to find the given pattern of the words in our trie.
+     * 
      * @param pattern is a string with * char that replaces some letters in the string
      *        to make that pattern.
      * @return a boolean that shows whether we are able to find the pattern in our trie.
@@ -22,6 +32,18 @@ public class WildCardSearch
         return wildcardSearch(trie.root(), pattern.toLowerCase(), 0);
     }
     
+    /**
+     * This is a private helper method for our searching. It is called by the method
+     * above but with extra parameters. Those are the root, the actual pattern that is
+     * converted to lower case in case when user wants to search for B**k*. It will search
+     * for possible words those can be in pattern b**k*. Then third parameter is an integer
+     * that shows a starting index.
+     * 
+     * @param node is a root of Trie
+     * @param pattern is a string that is a pattern with * char in it.
+     * @param index is an integer for indexing other children when we have * char
+     * @return a boolean that shows whether we have a word with pattern or no.
+     */
     private boolean wildcardSearch(TrieNode node, String pattern, int index) 
     {
         // base case
