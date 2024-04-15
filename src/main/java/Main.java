@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /*
- * Authors: Abrorjon Asralov, Jin Kim, Pulat Uralov,
+ * Authors: Abrorjon Asralov, Jin Kim, Pulat Uralov, Alex Scherer
  */
 
 public class Main {
