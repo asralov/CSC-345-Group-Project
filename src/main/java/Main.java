@@ -1,8 +1,9 @@
 package src.main.java;
+
 import java.util.Scanner;
 
 /*
- * Authors: Abrorjon Asralov, Jin Kim, Pulat Uralov,
+ * Authors: Abrorjon Asralov, Jin Kim, Pulat Uralov, Alex Scherer
  */
 
 public class Main {
@@ -90,7 +91,21 @@ public class Main {
 	}
 
 	private static void testAutofill() {
-		System.out.println("to be implemented...");
+		System.out.println("Adding words: apple, app, apps, banana, ball, cat");
+		Trie trie = new Trie();
+        // Insert words into the trie
+        trie.insert("apple");
+        trie.insert("app");
+        trie.insert("apps");
+        trie.insert("banana");
+        trie.insert("ball");
+        trie.insert("cat");
+        // use suggestionsToString on autofill to print as a string
+        System.out.println("Autofill suggestions for 'ap': " + trie.suggestionsToString(trie.autofill("ap", null,null,0))); 
+        System.out.println("Autofill suggestions for 'ba': " + trie.suggestionsToString(trie.autofill("ba", null,null,0)));
+        System.out.println("Autofill suggestions for 'ban': " + trie.suggestionsToString(trie.autofill("ban", null,null,0)));
+        System.out.println("Autofill suggestions for 'app': " + trie.suggestionsToString(trie.autofill("app", null,null,0)));
+        System.out.println("Autofill suggestions for 'y': " + trie.suggestionsToString(trie.autofill("y", null,null,0)));
 	}
 }
 

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import src.main.java.*;
 
 /*
@@ -71,5 +72,18 @@ public class TrieTest {
         assertTrue(trie.search("application")); // Ensure prefix remains
         System.out.print("PASSED");
 
+    }
+    
+    @Test
+    public void testAutofill() {
+    	Trie trie = new Trie();
+        trie.insert("apple");
+        trie.insert("app");
+        String[] test = {"app", "apple"};
+        String[] autofill = trie.autofill("ap", null, null,0);
+        for(int i = 0; i<test.length; i++) {
+        	assertEquals(test[i], autofill[i]);
+        } 
+        System.out.print("PASSED");
     }
 }
