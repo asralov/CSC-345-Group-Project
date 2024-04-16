@@ -46,6 +46,31 @@ public class Trie
         return cur.isWord();
     }
 
+	// search returns TrieNode if word is in trie
+    // case insensitive search
+    public TrieNode searchNode(String word) {
+        TrieNode cur = root;
+        String wordLower = word.toLowerCase();
+
+        // only iterate for the length of the word
+        // search would take O(n) time, where n is the length of the word
+        for (int i = 0; i < wordLower.length(); i++) {
+            // index into the children to achieve O(1) time
+            int index = wordLower.charAt(i) - 'a';
+            
+            if (cur.children()[index] == null) {
+                // character not found
+                return null;
+            } else {
+                // change cur pointer to the next TrieNode (next character)
+                cur = cur.children()[index];
+            }
+        }
+
+        // to determine if we've reached the end of the word
+        return cur;
+    }
+
     //inserts the word one letter at a time into the trie
     //returns true if word is inserted
     public boolean insert(String word) {
