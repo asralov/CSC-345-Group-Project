@@ -6,10 +6,29 @@ Tools: ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visual-stu
 
 ## Description
 TrieNode and Trie make up the general Trie data structure, with the Trie class haivng an extra autofill method that returns a list of words close to a string that was entered.
-AhoCorasickTrie:
-Frequency:
-WildCardSearch:
+
 Main: contains demonstrations of the functions of our trie
+
+AhoCorasickTrie:
+
+Frequency:
+
+WildCardSearch:
+
+### File Structure
+
+#### TrieNode.java
+The TrieNode class represents a single node in the Trie data structure. It stores information such as the character it represents, its children nodes, and whether it marks the end of a word.
+
+#### Trie.java
+The Trie class is the main implementation of the Trie data structure. It contains methods for inserting, searching, and removing words from the Trie. It also has an extra autofill method that suggests words based on the input string.
+
+#### AhoCorasickTrie.java
+The AhoCorasickTrie class implements the Aho-Corasick algorithm, which builds a Trie of all the patterns to search for and links the nodes to efficiently search for multiple patterns in a given text.
+
+#### Queue.java
+The Queue class is a custom implementation of a queue data structure to be used in the Aho-Corasick algorithm.
+
 
 ## Simulation
 To simulate the project, run the following command in the terminal in the root directory.
