@@ -5,7 +5,11 @@ Tools: ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visual-stu
 
 
 ## Description
-
+TrieNode and Trie make up the general Trie data structure, with the Trie class haivng an extra autofill method that returns a list of words close to a string that was entered.
+AhoCorasickTrie:
+Frequency:
+WildCardSearch:
+Main: contains demonstrations of the functions of our trie
 
 ## Simulation
 To simulate the project, run the following command in the terminal in the root directory.
