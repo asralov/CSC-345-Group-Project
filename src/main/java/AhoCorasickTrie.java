@@ -2,18 +2,24 @@ package src.main.java;
 /*
 Authors : Jin Kim
 
-Aho-Corasick algorithm
+Aho-Corasick algorithm is an efficient pattern matching algorithm that can search for
+all occurences of a set of patterns within a given text.
+
 */
 
 public class AhoCorasickTrie {
+    /*
+     * AhoCorasickTrie class build upon the Trie implementation.
+     */
     Trie trie;
 
-    // takes in an array of patterns to build the Trie
+    // constructor
     public AhoCorasickTrie() {
         trie = new Trie();
     }
 
     // builds the Trie with the given patterns
+    // Time Complexity: O(M * K) where M is the number of patterns and K is the average length of the patterns.
     public void build(String[] patterns) {
         for (String pattern : patterns) {
             trie.insert(pattern);
@@ -23,6 +29,9 @@ public class AhoCorasickTrie {
     }
 
     // uses BFS to build failure links and output links for each TrieNode
+    // failure link points to the longest proper suffix of the pattern that is also a prefix of some other pattern.
+    // output link points to the next node represents a pattern that is a suffix of the current node's pattern
+    // Time Complexity: O(M * K) where M is the number of patterns and K is the average length of the patterns.
     private void buildlLinks() {
         Queue queue = new Queue();
         TrieNode root = trie.root();
@@ -73,6 +82,7 @@ public class AhoCorasickTrie {
 
     // searches for the pattern in the text
     // and prints out the index of the pattern in the text
+    // Time Complexity: O(N) where N is the length of the text.
     public void search(String text) {
         // lowecase text assumed
         TrieNode cur = trie.root();
@@ -105,6 +115,7 @@ public class AhoCorasickTrie {
     }
 
     // returns the root of the Trie
+    // Runtime Complexity: O(1)
     public TrieNode getRoot() {
         return trie.root();
     }

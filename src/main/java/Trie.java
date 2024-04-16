@@ -23,6 +23,7 @@ public class Trie
 
     // search returns true if word is in trie
     // case insensitive search
+	// Time complexity: O(n) where n is the length of the word
     public boolean search(String word) {
         TrieNode cur = root;
         String wordLower = word.toLowerCase();
