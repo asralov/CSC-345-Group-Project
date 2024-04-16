@@ -140,7 +140,7 @@ public class Frequency {
 
     public static void main(String[] args) {
         Frequency frequency = new Frequency();
-        String textFile = "src/book2.txt";
+        String textFile = "src/main/text_demo/book2.txt";
         
         frequency.buildFrequency(textFile);
 
