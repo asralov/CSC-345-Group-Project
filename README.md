@@ -110,4 +110,8 @@ TrieTest > testRemoveNonexistentWord() PASSED
 .
 ```
 
-
+## Contributors
+- Abrorjon Asralov
+- Alex Scherer
+- Jin Kim
+- Pulat Uralov
