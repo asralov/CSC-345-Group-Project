@@ -16,6 +16,7 @@ public class TrieNode
     public TrieNode fail;  // simulates failure link
     public TrieNode out;   // simulates output link
     public String pattern; // pattern that node represents
+    private int wordCount = 0; // Count of the word
 
     // Constructor
     public TrieNode(char character)
@@ -72,6 +73,16 @@ public class TrieNode
     public TrieNode[] children()
     {
         return this.children;
+    }
+    
+    // getter for wordCount
+    public int getWordCount() {
+        return wordCount;
+    }
+    
+    // increments wordCount
+    public void incrementWordCount() {
+        this.wordCount++;
     }
 
     // added a toString for debugging and printing purposes
