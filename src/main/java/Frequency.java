@@ -4,6 +4,7 @@
  * and displays top N frequent words
  */
 
+package src.main.java;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
