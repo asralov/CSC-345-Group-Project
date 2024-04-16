@@ -64,6 +64,7 @@ Simulation options:
 1. Trie
 2. Aho-Corasick algorithm
 3. Autofill
+4. WildCard Search
 
 Enter your choice:
 ```
