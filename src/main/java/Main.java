@@ -22,12 +22,13 @@ public class Main {
 			System.out.println("1. Trie");
 			System.out.println("2. Aho-Corasick algorithm");
 			System.out.println("3. Autofill");
+			System.out.println("4. WildCard Search");
 
 			System.out.print("\nEnter your choice: ");
 			choice = keyboard.nextInt();
 			
 			System.out.println();
-		} while (choice != 1 && choice != 2 && choice != 3);
+		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
 
 		switch (choice) {
 			case 1:
@@ -38,6 +39,9 @@ public class Main {
 				break;
 			case 3:
 				testAutofill();
+				break;
+			case 4:
+				testWildCardSearch();
 				break;
 		}
 
@@ -106,6 +110,26 @@ public class Main {
         System.out.println("Autofill suggestions for 'ban': " + trie.suggestionsToString(trie.autofill("ban", null,null,0)));
         System.out.println("Autofill suggestions for 'app': " + trie.suggestionsToString(trie.autofill("app", null,null,0)));
         System.out.println("Autofill suggestions for 'y': " + trie.suggestionsToString(trie.autofill("y", null,null,0)));
+	}
+	
+	private static void testWildCardSearch() {
+		System.out.println("Adding words: apple, app, apps, banana, ball, cat");
+		Trie trie = new Trie();
+        // Insert words into the trie
+        trie.insert("apple");
+        trie.insert("app");
+        trie.insert("apps");
+        trie.insert("banana");
+        trie.insert("ball");
+        trie.insert("cat");
+		
+		WildCardSearch wildcardSearch = new WildCardSearch(trie);
+		System.out.println("WildCardSearch for 'a*p': "+ wildcardSearch.wildcardSearch("a*p"));
+		System.out.println("WildCardSearch for 'b*': "+ wildcardSearch.wildcardSearch("b*"));
+		System.out.println("WildCardSearch for 'y*': "+ wildcardSearch.wildcardSearch("y*"));
+		System.out.println("WildCardSearch for '*at': "+ wildcardSearch.wildcardSearch("*at"));
+		System.out.println("WildCardSearch for 'ab*': "+ wildcardSearch.wildcardSearch("ab*"));
+		System.out.println("WildCardSearch for '*a*': "+ wildcardSearch.wildcardSearch("*a*"));
 	}
 }
 
