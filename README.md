@@ -5,17 +5,22 @@ Tools: ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visual-stu
 
 
 ## Description
-TrieNode and Trie make up the general Trie data structure, with the Trie class haivng an extra autofill method that returns a list of words close to a string that was entered.
 
-Main: contains demonstrations of the functions of our trie
+Trie is a tree-based data structure that is used for efficient information retrieval. This project provides an implementation of the Trie data structure in Java, along with additional features such as autofill, wildcard search, word frequency, and Aho-Corasick algorithm.
 
-AhoCorasickTrie:
+#### Autofill
+The autofill method returns a list of words close to a string that was entered.
 
-Frequency:
+#### Wildcard Search
 
-WildCardSearch:
+#### Word Frequency
 
-### File Structure
+#### Aho-Corasick Algorithm
+
+## File Structure
+
+#### Main.java
+The Main class contains the demonstration of the basic functionalities of Trie. It provides a command-line interface for the user to choose between multiple Trie-based implementations.
 
 #### TrieNode.java
 The TrieNode class represents a single node in the Trie data structure. It stores information such as the character it represents, its children nodes, and whether it marks the end of a word.
@@ -28,7 +33,6 @@ The AhoCorasickTrie class implements the Aho-Corasick algorithm, which builds a 
 
 #### Queue.java
 The Queue class is a custom implementation of a queue data structure to be used in the Aho-Corasick algorithm.
-
 
 ## Simulation
 To simulate the project, run the following command in the terminal in the root directory.
@@ -87,25 +91,7 @@ AhoCorasickTrieTest > Failure and Output Link Test PASSED
 
 AhoCorasickTrieTest > Failure Link Test 1 PASSED
 
-AhoCorasickTrieTest > Failure Link Test 2 PASSED
-
 AhoCorasickTrieTest > Output Link Test 1 PASSED
-
-AhoCorasickTrieTest > Output Link Test 2 PASSED
-
-QueueTest > Enqueue and Dequeue Test PASSED
-
-QueueTest > Peek Test PASSED
-
-QueueTest > Empty Queue Test PASSED
-
-QueueTest > Resize Test PASSED
-
-TrieNodeTest > test1() PASSED
-
-TrieNodeTest > test2() PASSED
-
-TrieNodeTest > test3() PASSED
 
 TrieTest > testInsertAndSearch() PASSED
 
@@ -118,6 +104,10 @@ TrieTest > testInsertDuplicateWord() PASSED
 TrieTest > testRemoveWord() PASSED
 
 TrieTest > testRemoveNonexistentWord() PASSED
+
+.
+.
+.
 ```
 
 
