@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 
 /*
  * Authors : Jin Kim
-
  */
 
 public class AhoCorasickTrieTest {
@@ -42,6 +41,8 @@ public class AhoCorasickTrieTest {
         TrieNode gcNode = gNode.children()['c' - 'a'];
         TrieNode gcgNode = gcNode.children()['g' - 'a'];
 
+        // check failure links for each node
+        // sholud link to the longest suffix that is also a prefix
         assertEquals(root.fail, root);
         assertEquals(aNode.fail, root);
         assertEquals(acNode.fail, cNode);
@@ -66,11 +67,13 @@ public class AhoCorasickTrieTest {
         ac.build(patterns);
 
         /*
-         * root - a - b - c
-         *      - b - c - d
-         *      - c - d - e
-         *      - d - e - f
-         *      - e - f - g
+         * root - a - b - [c]
+         *      - b - c - [d]
+         *      - c - d - [e]
+         *      - d - e - [f]
+         *      - e - f - [g]
+         * 
+         * [ ] indicates word
          */
 
         TrieNode root = ac.getRoot();
@@ -96,6 +99,8 @@ public class AhoCorasickTrieTest {
         TrieNode efgNode = efNode.children()['g' - 'a'];
 
         // finding efg should output ef, de, cde, bcde, abcde
+        // check failure links for each node
+        // sholud link to the longest suffix that is also a prefix
         assertEquals(abNode.fail, bNode);
         assertEquals(bcNode.fail, cNode);
         assertEquals(cdNode.fail, dNode);
@@ -136,7 +141,8 @@ public class AhoCorasickTrieTest {
         TrieNode shNode = sNode.children()['h' - 'a'];
         TrieNode sheNode = shNode.children()['e' - 'a'];
 
-        // finding she should also output he
+        // sheNode's outputlink should link to heNode, meaning
+        // finding she should also also output he
         assertEquals(sheNode.out, heNode);
     }
 
@@ -174,11 +180,13 @@ public class AhoCorasickTrieTest {
         AhoCorasickTrie ac = new AhoCorasickTrie();
         ac.build(patterns);
         /*
-         * root - a - b - c - d - e
-         *      - b - c - d - e
-         *      - c - d - e
-         *      - d - e
-         *      - e
+         * root - a - b - c - d - [e]
+         *      - b - c - d - [e]
+         *      - c - d - [e]
+         *      - d - [e]
+         *      - [e]
+         * 
+         * [ ] indicates word
          */
 
         TrieNode root = ac.getRoot();

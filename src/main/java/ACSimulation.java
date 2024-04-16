@@ -5,6 +5,11 @@ package src.main.java;
 
 public class ACSimulation {
     public static String DIVIDER = "-------------------------------";
+
+	public ACSimulation() {
+		// Empty constructor
+	}
+
     public static void run() {
 		System.out.println(DIVIDER);
         System.out.println("Aho-Corasick algorithm");
