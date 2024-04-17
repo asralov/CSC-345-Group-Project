@@ -23,12 +23,13 @@ public class Main {
 			System.out.println("2. Aho-Corasick algorithm");
 			System.out.println("3. Autofill");
 			System.out.println("4. WildCard Search");
+			System.out.println("5. Frequency");
 
 			System.out.print("\nEnter your choice: ");
 			choice = keyboard.nextInt();
 			
 			System.out.println();
-		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
+		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5);
 
 		switch (choice) {
 			case 1:
@@ -43,6 +44,8 @@ public class Main {
 			case 4:
 				testWildCardSearch();
 				break;
+			case 5:
+				testWordFrequency();
 		}
 
 		keyboard.close();
@@ -130,6 +133,25 @@ public class Main {
 		System.out.println("WildCardSearch for '*at': "+ wildcardSearch.wildcardSearch("*at"));
 		System.out.println("WildCardSearch for 'ab*': "+ wildcardSearch.wildcardSearch("ab*"));
 		System.out.println("WildCardSearch for '*a*': "+ wildcardSearch.wildcardSearch("*a*"));
+	}
+
+	private static void testWordFrequency() {
+		Frequency frequency = new Frequency();
+        String textFile = "src/main/text_demo/book2.txt";
+        
+        frequency.buildFrequency(textFile);
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask user for the number
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        scanner.nextLine();
+        
+        frequency.NMostFrequentWords(number);
+
+        scanner.close();
 	}
 }
 
