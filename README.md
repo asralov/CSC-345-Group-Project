@@ -97,12 +97,6 @@ gradlew.bat clean test
 
 User is able to see the test results as shown below:
 ```shell
-AhoCorasickTrieTest > Failure and Output Link Test PASSED
-
-AhoCorasickTrieTest > Failure Link Test 1 PASSED
-
-AhoCorasickTrieTest > Output Link Test 1 PASSED
-
 TrieTest > testInsertAndSearch() PASSED
 
 TrieTest > testRemoveWordWithPrefix() PASSED
