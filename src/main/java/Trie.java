@@ -157,7 +157,7 @@ public class Trie
 	 *Returns Null if given string has no suggestions in the Trie
 	 *AutoFill does NOT contain the given string as you are looking for other words*/
 	public String[] autofill(String string, String[] suggestions, String curString, int currIndex) {
-		suggestions = new String[20];
+		suggestions = new String[100];
 		
 		TrieNode cur = root;
         String wordLower = string.toLowerCase();
