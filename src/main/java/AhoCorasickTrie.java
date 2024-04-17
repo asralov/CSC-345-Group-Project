@@ -82,7 +82,7 @@ public class AhoCorasickTrie {
 
     // searches for the pattern in the text
     // and prints out the index of the pattern in the text
-    // Time Complexity: O(N) where N is the length of the text.
+    // Time Complexity: O(N + M) where N is the length of the text and M is the number of patterns.
     public void search(String text) {
         // lowecase text assumed
         TrieNode cur = trie.root();

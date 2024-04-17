@@ -12,10 +12,13 @@ Trie is a tree-based data structure that is used for efficient information retri
 The autofill method returns a list of words close to a string that was entered.
 
 #### Wildcard Search
+The Wildcard Search method returns a boolean depending on user's provided parameter. It can be a string pattern with * characters instead of some letters in the word (As an example we can see a pattern: b**). And if there are words such as: "bee", "bed", "bad". And after calling this search we are able to get True output which means we have words with b** pattern. However, if we are looking for "bu*" pattern, it should return false because we do not have any words with bu* pattern.
 
 #### Word Frequency
+Word Frequency return N most frequent words in a text
 
 #### Aho-Corasick Algorithm
+Implements Aho-Corasick Algorithm to efficiently search all occurrences of a set of patterns within a given text.
 
 ## File Structure
 
@@ -33,6 +36,12 @@ The AhoCorasickTrie class implements the Aho-Corasick algorithm, which builds a 
 
 #### Queue.java
 The Queue class is a custom implementation of a queue data structure to be used in the Aho-Corasick algorithm.
+
+#### WildCardSearch.java
+The WildCardSearch class implements the WildCardSearch algorithm. It should get a Trie with words as a paramater inside of the constructor. And it should return a boolean after asked pattern in the trie. If there are words with similar pattern, it should return true, false otherwise.
+
+#### Frequency.java
+The Frequency class implements the Word Frequency algorithm that reads a text, calculates the count of each word, and displays N most frequent words in the text. This class uses a Trie to implement the algorithm.
 
 ## Simulation
 To simulate the project, run the following command in the terminal in the root directory.
