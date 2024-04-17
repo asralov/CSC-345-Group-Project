@@ -76,6 +76,7 @@ Simulation options:
 2. Aho-Corasick algorithm
 3. Autofill
 4. WildCard Search
+5. Frequency
 
 Enter your choice:
 ```
