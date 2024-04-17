@@ -97,17 +97,19 @@ gradlew.bat clean test
 
 User is able to see the test results as shown below:
 ```shell
-TrieTest > testInsertAndSearch() PASSED
+TrieTest > Autofill Test PASSED
 
-TrieTest > testRemoveWordWithPrefix() PASSED
+TrieTest > Insert and Search Test PASSED
 
-TrieTest > testCaseInsensitiveSearch() PASSED
+TrieTest > Remove Word with Prefix Test PASSED
 
-TrieTest > testInsertDuplicateWord() PASSED
+TrieTest > Case Insensitive Search Test PASSED
 
-TrieTest > testRemoveWord() PASSED
+TrieTest > Insert Duplicate Word Test PASSED
 
-TrieTest > testRemoveNonexistentWord() PASSED
+TrieTest > Remove Word Test PASSED
+
+TrieTest > Remove Nonexistent Word Test PASSED
 
 .
 .
