@@ -17,6 +17,7 @@ The autofill method returns a list of words close to a string that was entered.
 Word Frequency return N most frequent words in a text
 
 #### Aho-Corasick Algorithm
+Uses Aho-Corasik algorithm to find all occurrences of a set of patterns within a given text. 
 
 ## File Structure
 
