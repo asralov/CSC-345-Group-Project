@@ -14,6 +14,7 @@ The autofill method returns a list of words close to a string that was entered.
 #### Wildcard Search
 
 #### Word Frequency
+Word Frequency return N most frequent words in a text
 
 #### Aho-Corasick Algorithm
 
@@ -33,6 +34,9 @@ The AhoCorasickTrie class implements the Aho-Corasick algorithm, which builds a 
 
 #### Queue.java
 The Queue class is a custom implementation of a queue data structure to be used in the Aho-Corasick algorithm.
+
+#### Frequency.java
+The Frequency class implements the Word Frequency algorithm that reads a text, calculates the count of each word, and displays N most frequent words in the text. This class uses a Trie to implement the algorithm.
 
 ## Simulation
 To simulate the project, run the following command in the terminal in the root directory.

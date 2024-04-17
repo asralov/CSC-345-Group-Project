@@ -59,7 +59,7 @@ public class Frequency {
      *
      * @param N The number of most frequent words to retrieve and print.
      */
-    private void NMostFrequentWords(int N) {
+    public void NMostFrequentWords(int N) {
     	
         // Array to store words and their frequencies 
         String[][] wordFreqArray = new String[100][2]; 
@@ -96,7 +96,7 @@ public class Frequency {
      * @param wordCount    The array storing the count of words processed.
      * @return The updated wordFreqArray after collecting words and frequencies.
      */
-    private String[][] collectWordsAndFrequencies(TrieNode node, String prefix, String[][] wordFreqArray, int[] wordCount) {
+    public String[][] collectWordsAndFrequencies(TrieNode node, String prefix, String[][] wordFreqArray, int[] wordCount) {
     	
         if (node == null) {
             return wordFreqArray;
@@ -138,22 +138,7 @@ public class Frequency {
         return newArray;
     }
 
-    public static void main(String[] args) {
-        Frequency frequency = new Frequency();
-        String textFile = "src/main/text_demo/book2.txt";
+    // public static void main(String[] args) {
         
-        frequency.buildFrequency(textFile);
-
-        Scanner scanner = new Scanner(System.in);
-
-        // Ask user for the number
-        System.out.print("Enter a number: ");
-        int number = scanner.nextInt();
-
-        scanner.nextLine();
-        
-        frequency.NMostFrequentWords(number);
-
-        scanner.close();
-    }
+    // }
 }
